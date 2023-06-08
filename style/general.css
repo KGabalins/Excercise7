@@ -1,0 +1,10 @@
+body {
+  background-color:#D9D9D9;
+  font-family: Inter;
+}
+
+.page-title {
+  text-align: center;
+  font-style: italic;
+  color: #FFFFFF;
+}
