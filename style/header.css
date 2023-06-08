@@ -2,8 +2,10 @@ header {
   display: flex;
   background-color: #363636;
   color: #FFFFFF;
+  font-weight: bold;
   padding: 20px 20px;
   border-radius: 25px;
+  margin-bottom: 20px;
 }
 
 header div {
