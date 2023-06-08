@@ -1,6 +1,5 @@
 .main-section {
   display: flex;
-  position: relative;
   background-color: #FFFFFF;
   flex-direction: column;
   border-radius: 25px;

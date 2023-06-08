@@ -4,9 +4,64 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+  <link href="style/general.css" rel="stylesheet">
+  <link href="style/header.css" rel="stylesheet">
+  <link href="style/login.css" rel="stylesheet">
   <title>Login</title>
 </head>
 <body>
+  <h1 class="page-title">Movie rental</h1>
+  <div class="sign-up-container">
+    <div class="input-field">
+      <label for="uname">Email</label>
+      <input type="text" placeholder="email" name="uname" required>
+    </div>
+
+    <div class="input-field">
+      <label for="psw">Password</label>
+      <input type="password" placeholder="password" name="psw" required>  
+    </div>
+       
+    <div>
+      <button type="submit" class="sign-in-button"><a href="home.html" class="redirect">Sign in</a></button>
+    </div>
+  </div>
+
+  <div class="register-container">
+    <div class="input-field">
+      <label for="name">Name</label>
+      <input type="text" placeholder="name" name="uname" required>
+    </div>
   
+    <div class="input-field">
+      <label for="surname">Surname</label>
+      <input type="text" placeholder="surname" name="uname" required>
+    </div>
+
+    <div class="input-field">
+      <label for="email">Email</label>
+      <input type="text" placeholder="email" name="email" required>
+    </div>
+
+    <div class="input-field">
+      <label for="reemail">Email again</label>
+      <input type="text" placeholder="email" name="reemail" required>
+    </div>
+  
+    <div class="input-field">
+      <label for="psw">Password</label>
+      <input type="password" placeholder="password" name="psw" required>  
+    </div>
+
+    <div class="input-field">
+      <label for="repsw">Password again</label>
+      <input type="password" placeholder="password" name="repsw" required>  
+    </div>
+        
+    <div>
+      <button type="submit" class="sign-in-button"><a href="home.html" class="redirect">Register</a></button>
+    </div>
+  </div>
 </body>
 </html>
