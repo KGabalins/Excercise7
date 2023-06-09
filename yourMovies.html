@@ -7,6 +7,8 @@
   <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
   <link href="style/general.css" rel="stylesheet">
   <link href="style/header.css" rel="stylesheet">
+  <link href="style/movies.css" rel="stylesheet">
+  <link href="style/footer.css" rel="stylesheet">
   <title>Your movies</title>
 </head>
 <body>
@@ -16,5 +18,50 @@
     <div class="your-movies-button"><a href="yourMovies.html" class="redirect">Your movies</a></div>
     <div class="profile-button"><a href="profile.html" class="redirect">Profile</a></div>
   </header>
+
+
+  <main>
+    <section class="main-section">
+      <p class="available-movies-title">Your movies</p>
+      <div class="movies-header">
+        <div class="movie-header-name"><p>Name</p></div>
+        <div><p>Genre</p></div>
+        <div><p>Time</p></div>
+        <div><p>Price</p></div>
+        <div></div>
+      </div>
+      <div class="movie-items">
+        <div class="movie-name"><p>Batman</p></div>
+        <div class="movie-genre"><p>Action</p></div>
+        <div class="movie-time">
+          <button>&lt;</button>
+          <input type="text" value="12h" readonly>
+          <button>&gt;</button>
+        </div>
+        <div class="movie-price"><p>4.55$</p></div>
+        <div class="remove-button-container">
+          <button class="remove-button">Remove</button>
+        </div>
+      </div>
+      <div class="movie-items">
+        <div class="movie-name"><p>Batman</p></div>
+        <div class="movie-genre"><p>Action</p></div>
+        <div class="movie-time">
+          <button>&lt;</button>
+          <input type="text" value="12h" readonly>
+          <button>&gt;</button>
+        </div>
+        <div class="movie-price"><p>4.55$</p></div>
+        <div class="remove-button-container">
+          <button class="remove-button">Remove</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Made by: Raivo Karlis Gabalins</p>
+    <p>2023</p>
+  </footer>
 </body>
 </html>

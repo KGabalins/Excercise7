@@ -46,11 +46,40 @@
 
 .rent-button {
   background-color: #363636;
+  border: none;
   color: #FFFFFF;
   font-weight: bold;
   font-size: 20px;
   height: 100%;
   width: 100%;
+}
+
+.remove-button {
+  background-color: #C93333;
+  border: none;
+  color: #FFFFFF;
+  font-weight: bold;
+  font-size: 20px;
+  height: 100%;
+  width: 100%;
+}
+
+.movie-time {
+  display: flex;
+  padding: 16px 0px;
+}
+
+.movie-time input {
+  width: 60px;
+  border: none;
+  text-align: center;
+  font-weight: bold;
+}
+
+.movie-time button {
+  color: #FFFFFF;
+  background-color: #363636;
+  border: none;
 }
 
 .check-img {

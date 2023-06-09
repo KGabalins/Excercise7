@@ -1,0 +1,50 @@
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 25px;
+  padding-bottom: 50px;
+}
+
+.profile-title {
+  text-align: center;
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+.profile-info {
+  display: grid;
+  grid-template-columns: 180px 500px;
+  row-gap: 25px;
+  column-gap: 25px;
+  padding: 0px 100px;
+}
+
+.profile-picture {
+  width: 100%;
+}
+
+.profile-info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.profile-info-container p {
+  margin: 5px 0px;
+}
+
+.reset-password-container {
+  display: flex;
+  justify-content: center;
+}
+
+.profile-container button {
+  background-color: #363636;
+  color: #FFFFFF;
+  border: none;
+  font-size: 15px;
+  width: 140px;
+  height: 25px;
+  border-radius: 15px;
+}
