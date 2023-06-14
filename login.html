@@ -13,58 +13,67 @@
 </head>
 <body>
   <h1 class="page-title">Movie rental</h1>
-  <div class="form">
-    <div class="sign-up-container">
-      <div class="input-field">
-        <label for="uname">Email</label>
-        <input type="text" placeholder="email" name="uname" required>
-      </div>
-  
-      <div class="input-field">
-        <label for="psw">Password</label>
-        <input type="password" placeholder="password" name="psw" required>  
-      </div>
-         
-      <div>
-        <button type="submit" class="sign-in-button"><a href="home.html" class="redirect">Sign in</a></button>
-      </div>
-    </div>
-  
-    <div class="register-container">
-      <div class="input-field">
-        <label for="name">Name</label>
-        <input type="text" placeholder="name" name="uname" required>
-      </div>
+
+  <div class="form" >
+    <form action="home.html">
+      <div class="sign-up-container">
+        <div class="input-field">
+          <label for="uname">Email</label>
+          <input type="text" placeholder="email" name="uname" required>
+        </div>
     
-      <div class="input-field">
-        <label for="surname">Surname</label>
-        <input type="text" placeholder="surname" name="uname" required>
-      </div>
-  
-      <div class="input-field">
-        <label for="email">Email</label>
-        <input type="text" placeholder="email" name="email" required>
-      </div>
-  
-      <div class="input-field">
-        <label for="reemail">Email again</label>
-        <input type="text" placeholder="email" name="reemail" required>
-      </div>
-    
-      <div class="input-field">
-        <label for="psw">Password</label>
-        <input type="password" placeholder="password" name="psw" required>  
-      </div>
-  
-      <div class="input-field">
-        <label for="repsw">Password again</label>
-        <input type="password" placeholder="password" name="repsw" required>  
-      </div>
+        <div class="input-field">
+          <label for="psw">Password</label>
+          <input type="password" placeholder="password" name="psw" required>  
+        </div>
           
-      <div>
-        <button type="submit" class="sign-in-button"><a href="home.html" class="redirect">Register</a></button>
+        <div>
+          <button type="submit" class="sign-in-button">Sign in</button>
+        </div>
       </div>
-    </div>
+    </form>
+  
+    <form action="home.html" name="register-form" onsubmit="return validate()">
+      <div class="register-container" id="name-container">
+        <div class="input-field">
+          <label for="name">Name</label>
+          <input type="text" placeholder="name" name="uname" id="uname">
+          <p id="uname-error" class="error-msg">This input field should contain atleast 2 characters</p>
+        </div>
+      
+        <div class="input-field" id="surname-container">
+          <label for="surname">Surname</label>
+          <input type="text" placeholder="surname" name="surname" id="surname">
+          <p id="surname-error" class="error-msg">This input field should be empty or contain atleast 2 characters</p>
+        </div>
+    
+        <div class="input-field">
+          <label for="email">Email</label>
+          <input type="email" placeholder="email" name="email" required>
+        </div>
+    
+        <div class="input-field">
+          <label for="reemail">Email again</label>
+          <input type="email" placeholder="email" name="reemail" required>
+        </div>
+      
+        <div class="input-field">
+          <label for="psw">Password</label>
+          <input type="password" placeholder="password" name="psw" id="psw">  
+          <p id="psw-error" class="error-msg">Password should be atleast 8 characters long</p>
+        </div>
+    
+        <div class="input-field">
+          <label for="repsw">Password again</label>
+          <input type="password" placeholder="password" name="repsw" id="repsw">  
+          <p id="repsw-error" class="error-msg">The passwords doesn't match</p>
+        </div>
+            
+        <div>
+          <button type="submit" class="sign-in-button">Register</button>
+        </div>
+      </div>
+    </form>
 
   </div>
   
@@ -72,5 +81,6 @@
     <p>Made by: Raivo Karlis Gabalins</p>
     <p>2023</p>
   </footer>
+  <script src="login.js"></script>
 </body>
 </html>
