@@ -1,23 +1,49 @@
-const yourMovies = JSON.parse(localStorage.getItem("yourMovies"))
-const mainSection = document.getElementById("main-section")
+const movieContainer = document.getElementById("movie-list-container")
 
-for (let i = 0; i < yourMovies.length; i++) {
-  mainSection.innerHTML += 
-  `
-    <div class="movie-items">
-      <div class="movie-name"><p>${yourMovies[i].name}</p></div>
-      <div class="movie-genre"><p>${yourMovies[i].genre}</p></div>
-      <div class="movie-time">
-        <button onclick="decreaseTime(this)">&lt;</button>
-        <input type="text" class="time-text" value="12h" id="time-${i}" readonly>
-        <button onclick="increaseTime(this)">&gt;</button>
+function updateList () {
+  const yourMovies = JSON.parse(localStorage.getItem("yourMovies"))
+  let movieList = ""
+  for (let i = 0; i < yourMovies.length; i++) {
+    movieList += 
+    `
+      <div class="movie-items">
+        <div class="movie-name"><p>${yourMovies[i].name}</p></div>
+        <div class="movie-genre"><p>${yourMovies[i].genre}</p></div>
+        <div class="movie-time">
+          <button onclick="decreaseTime(this)">&lt;</button>
+          <input type="text" class="time-text" value="12h" id="time-${i}" readonly>
+          <button onclick="increaseTime(this)">&gt;</button>
+        </div>
+        <div class="movie-price"><p>${yourMovies[i].price}</p></div>
+        <div class="remove-button-container">
+          <button class="remove-button" id="${i}" onclick="removeMovie(this)">Remove</button>
+        </div>
       </div>
-      <div class="movie-price"><p>${yourMovies[i].price}</p></div>
-      <div class="remove-button-container">
-        <button class="remove-button">Remove</button>
-      </div>
-    </div>
-  `
+    `
+  }
+  movieContainer.innerHTML = movieList
+}
+
+updateList()
+
+
+function removeMovie(ev) {
+  const availableMovies = JSON.parse(localStorage.getItem("availableMovies"))
+  const yourMovies = JSON.parse(localStorage.getItem("yourMovies"))
+
+  for (let movie in availableMovies) {
+    if (availableMovies[movie].name === yourMovies[ev.id].name) {
+      availableMovies[movie].inStock++
+      yourMovies.splice(ev.id, 1)
+
+      localStorage.setItem("availableMovies", JSON.stringify(availableMovies))
+      localStorage.setItem("yourMovies", JSON.stringify(yourMovies))
+
+      updateList()
+
+      break
+    }
+  }
 }
 
 function decreaseTime(ev) {

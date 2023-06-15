@@ -13,9 +13,6 @@ function Movie (name, genre, price, inStock) {
     }
   }
 }
-
-console.log(rentBtn)
-
 const movie1 = new Movie("Batman", "Action", 4.99, 0)
 const movie2 = new Movie("The Godfather", "Thriller", 3.99, 4)
 const movie3 = new Movie("The Dark Knight", "Action and adventure", 5.99, 2)
@@ -26,6 +23,16 @@ const movie7 = new Movie("Die Hard", "Action and adventure", 3.99, 5)
 const movie8 = new Movie("Boyhood", "Drama", 5.99, 4)
 
 const movies = [movie1, movie2, movie3, movie4, movie5, movie6, movie7, movie8]
+
+if (localStorage.getItem("availableMovies") === null && localStorage.getItem("myMovies") === null) {
+  localStorage.setItem ("availableMovies", JSON.stringify(movies))
+} else {
+  const availableMovies = JSON.parse(localStorage.getItem("availableMovies"))
+
+  for (let x = 0; x < availableMovies.length; x++) {
+    movies[x].inStock = availableMovies[x].inStock
+  }
+}
 
 for(let x = 0; x < movies.length; x++){
   let imageName = "check"
@@ -51,6 +58,9 @@ function rent(btn) {
     document.getElementById("text-" + id).innerHTML = movies[id].inStock
     yourMovies.push(movies[id])
     localStorage.setItem("yourMovies", JSON.stringify(yourMovies))
+    localStorage.setItem("availableMovies", JSON.stringify(movies))
+
+    console.log(movies)
 
     if (movies[id].inStock === 0) {
       document.getElementById("img-" + id).src = "icons/cross.png"
@@ -58,6 +68,4 @@ function rent(btn) {
   } else {
     alert("No movies in stock")
   }
-
-  console.log(yourMovies)
 }
