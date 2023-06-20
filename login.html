@@ -14,17 +14,17 @@
 <body>
   <h1 class="page-title">Movie rental</h1>
 
-  <div class="form" >
+  <div class="form" id="login-form">
     <form action="home.html">
       <div class="sign-up-container">
         <div class="input-field">
           <label for="uname">Email</label>
-          <input type="text" placeholder="email" name="uname" required>
+          <input type="text" placeholder="email" name="email" id="login-email" required>
         </div>
     
         <div class="input-field">
           <label for="psw">Password</label>
-          <input type="password" placeholder="password" name="psw" required>  
+          <input type="password" placeholder="password" name="password" id="login-password" required>  
         </div>
           
         <div>
@@ -33,7 +33,7 @@
       </div>
     </form>
   
-    <form action="home.html" name="register-form" onsubmit="return validate()">
+    <form action="home.html" name="register-form" id="register-form">
       <div class="register-container" id="name-container">
         <div class="input-field">
           <label for="name">Name</label>
@@ -49,12 +49,13 @@
     
         <div class="input-field">
           <label for="email">Email</label>
-          <input type="email" placeholder="email" name="email" required>
+          <input type="email" placeholder="email" name="email" id="email" required>
+          <p id="email-error" class="error-msg">Both emails should match!</p>
         </div>
     
         <div class="input-field">
           <label for="reemail">Email again</label>
-          <input type="email" placeholder="email" name="reemail" required>
+          <input type="email" placeholder="email" name="reemail" id="reemail" required>
         </div>
       
         <div class="input-field">

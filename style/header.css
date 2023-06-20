@@ -14,5 +14,14 @@ header div {
 
 .redirect {
   text-decoration: none;
+  cursor: pointer;
   color: #FFFFFF;
+}
+
+.header-button {
+  cursor: pointer;
+}
+
+#logout-button {
+  margin-left: auto;
 }

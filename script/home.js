@@ -1,6 +1,11 @@
 const mainSection = document.getElementById("main-section")
 const rentBtn = document.getElementsByClassName("rent-button")
+const logoutButton = document.getElementById("logout-button")
 const yourMovies = []
+
+if (!localStorage.getItem("currUser")) {
+  location.href = "login.html"
+}
 
 function Movie (name, genre, price, inStock) {
   this.name = name,
@@ -49,6 +54,11 @@ for(let x = 0; x < movies.length; x++){
     <div class="rent-button-container"><button class="rent-button" onclick="rent(this)" id="${x}">Rent</button></div>
   </div>
   `
+}
+
+logoutButton.onclick = (e) => {
+  localStorage.removeItem("currUser")
+  location.href = "login.html"
 }
 
 function rent(btn) {

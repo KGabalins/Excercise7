@@ -1,5 +1,9 @@
 const movieContainer = document.getElementById("movie-list-container")
 
+if (!localStorage.getItem("currUser")) {
+  location.href = "login.html"
+}
+
 function updateList () {
   const yourMovies = JSON.parse(localStorage.getItem("yourMovies"))
   let movieList = ""

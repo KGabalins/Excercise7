@@ -3,6 +3,10 @@ const surname = "Newman"
 let email = "john.newman@mail.com"
 const profileInfoContainer = document.getElementsByClassName("profile-info-container")
 
+if (!localStorage.getItem("currUser")) {
+  location.href = "login.html"
+}
+
 function updateInfo () {
   profileInfoContainer[0].innerHTML = 
   `
